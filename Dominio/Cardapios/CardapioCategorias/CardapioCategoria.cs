@@ -8,6 +8,6 @@ namespace Pedido.Dominio.Cardapios.CardapioCategorias
         public int CodigoCardapio { get; set; }
         public int CodigoCategoria { get; set; }
 
-        public Categoria? Categoria { get; set; }
+        public Categoria Categoria { get; set; }
     }
 }

@@ -1,6 +1,8 @@
 ﻿using ADM.Api.Mensageria;
 using Microsoft.AspNetCore.Mvc;
 using Pedido.Aplic.Cardapios;
+using Pedido.Dominio.Cardapios.CardapioCategorias;
+using System.Web.Http.OData;
 
 namespace Pedido.Controllers.Cadapios
 {
@@ -16,14 +18,42 @@ namespace Pedido.Controllers.Cadapios
         }
 
         [HttpGet]
-        [Route("ListarCategorias/{codigoCardapio}")]
-        public ResponseHttps ListarCategorias([FromRoute]int codigoCardapio)
+        [Route("ListarCategorias")]
+        [EnableQuery]
+        public IQueryable<CardapioCategoria> Listar()
+        {
+            var ret = _aplicCardapio.Listar();
+
+            return ret;
+        }
+
+        [HttpGet]
+        [Route("ListarCategorias/{idCardapio}")]
+        [EnableQuery]
+        public ResponseHttps ListarCategorias([FromRoute]int idCardapio)
         {
             try
             {
-                var ret = _aplicCardapio.ListarCategorias(codigoCardapio);
+                _aplicCardapio.ListarCategorias(idCardapio);
 
-                return new ResponseHttps().RetSucesso(ret);
+                return new ResponseHttps().RetSucesso();
+            }
+            catch (Exception ex)
+            {
+                return new ResponseHttps().RetError(ex.Message);
+            }
+        }
+
+        [HttpGet]
+        [Route("ListarProdutosCategoria/{idCardapioCategoria}")]
+        [EnableQuery]
+        public ResponseHttps ListarProdutosCategoria([FromRoute] int idCardapioCategoria)
+        {
+            try
+            {
+                _aplicCardapio.ListarProdutosCategoria(idCardapioCategoria);
+
+                return new ResponseHttps().RetSucesso();
             }
             catch (Exception ex)
             {

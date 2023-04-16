@@ -1,13 +1,12 @@
 using Microsoft.EntityFrameworkCore;
 using Pedido;
+using Pedido.Dominio.Base;
 using Pedido.Repositorio.Contexto;
-using static System.Runtime.InteropServices.JavaScript.JSType;
 
 var builder = WebApplication.CreateBuilder(args);
 var idi = new IDI();
 
 // Add services to the container.
-
 builder.Services.AddControllers();
 // Learn more about configuring Swagger/OpenAPI at https://aka.ms/aspnetcore/swashbuckle
 builder.Services.AddEndpointsApiExplorer();

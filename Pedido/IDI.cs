@@ -1,6 +1,8 @@
 ﻿using Pedido.Aplic.Cardapios;
+using Pedido.Dominio.Base;
 using Pedido.Dominio.Cardapios.CardapioCategorias;
 using Pedido.Repositorio.Repositorios;
+using Pedido.Repositorio.Repositorios.Base;
 
 namespace Pedido
 {
@@ -12,6 +14,7 @@ namespace Pedido
         }
         public void IdiRepositorio(WebApplicationBuilder builder)
         {
+
             builder.Services.AddScoped<IRepCardapioCategoria, RepCardapioCategoria>();
         }
     }

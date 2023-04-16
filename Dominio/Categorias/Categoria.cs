@@ -1,5 +1,4 @@
-﻿using Pedido.Dominio.Cardapios.CardapioCategorias;
-using Pedido.Dominio.Padrao;
+﻿using Pedido.Dominio.Padrao;
 
 namespace Pedido.Dominio.Categorias
 {
@@ -7,5 +6,6 @@ namespace Pedido.Dominio.Categorias
     {
         public string Tipo { get; set; }
         public string? Descricao { get;}
+        public string? ImagemUri { get; set; }
     }
 }

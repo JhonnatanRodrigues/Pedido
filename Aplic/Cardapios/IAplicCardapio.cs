@@ -1,5 +1,5 @@
 ﻿using Pedido.Dominio.Cardapios.CardapioCategorias;
-using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaItens;
+using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaProdutos;
 
 namespace Pedido.Aplic.Cardapios
 {
@@ -7,6 +7,6 @@ namespace Pedido.Aplic.Cardapios
     {
         IQueryable<CardapioCategoria>? Listar();
         List<CardapioCategoria> ListarCategorias(int codigoCardapio);
-        List<CardapioCategoriaItem> ListarProdutosCategoria(int codigoCardapioCategoria);
+        List<CardapioCategoriaProduto> ListarProdutosCategoria(int codigoCardapioCategoria);
     }
 }

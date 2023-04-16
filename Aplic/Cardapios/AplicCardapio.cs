@@ -1,17 +1,18 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pedido.Dominio.Cardapios.CardapioCategorias;
-using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaItens;
+using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaProdutos;
 
 namespace Pedido.Aplic.Cardapios
 {
     public class AplicCardapio : IAplicCardapio
     {
         private readonly IRepCardapioCategoria _repCardapioCategoria;
-        private readonly IRepCardapioCategoriaItem _repCardapioCategoriaItem;
+        private readonly IRepCardapioCategoriaProdutos _repCardapioCategoriaProduto;
 
-        public AplicCardapio(IRepCardapioCategoria repCardapioCategoria)
+        public AplicCardapio(IRepCardapioCategoria repCardapioCategoria, IRepCardapioCategoriaProdutos repCardapioCategoriaProdutos)
         {
             _repCardapioCategoria = repCardapioCategoria;
+            _repCardapioCategoriaProduto = repCardapioCategoriaProdutos;
         }
 
         public IQueryable<CardapioCategoria>? Listar()
@@ -27,9 +28,9 @@ namespace Pedido.Aplic.Cardapios
 
             return ret;
         }
-        public List<CardapioCategoriaItem> ListarProdutosCategoria(int codigoCardapioCategoria)
+        public List<CardapioCategoriaProduto> ListarProdutosCategoria(int codigoCardapioCategoria)
         {
-            return _repCardapioCategoriaItem.Listar().Where(p => p.CodigoCardapioCategoria == codigoCardapioCategoria).Include(p => p.Produtos).ToList();
+            return _repCardapioCategoriaProduto.Listar().Where(p => p.CodigoCardapioCategoria == codigoCardapioCategoria).Include(p => p.Produtos).Include(p => p.CardapioCategoria).ToList();
         }
     }
 }

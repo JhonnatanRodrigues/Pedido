@@ -1,11 +1,5 @@
-﻿using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Microsoft.EntityFrameworkCore;
-using Pedido.Dominio.Cardapios.CardapioCategorias;
-using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using Microsoft.EntityFrameworkCore.Metadata.Builders;
 using Pedido.Dominio.Categorias;
 
 namespace Pedido.Repositorio.Config.Categorias
@@ -29,6 +23,9 @@ namespace Pedido.Repositorio.Config.Categorias
             builder.Property(P => P.Descricao)
                 .HasColumnName("Descricao")
                 .IsRequired();
+
+            builder.Property(P => P.ImagemUri)
+                .HasColumnName("Imagem");
 
             builder.Property(P => P.IdEmp)
                 .HasColumnName("IdEmp")

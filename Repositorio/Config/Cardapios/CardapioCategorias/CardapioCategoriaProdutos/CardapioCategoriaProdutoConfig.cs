@@ -1,27 +1,27 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaItens;
+using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaProdutos;
 
-namespace Pedido.Repositorio.Config.Cardapios.CardapioCategorias.CardapioCategoriaItens
+namespace Pedido.Repositorio.Config.Cardapios.CardapioCategorias.CardapioCategoriaProdutos
 {
-    public class CardapioCategoriaItemConfig : IEntityTypeConfiguration<CardapioCategoriaItem>
+    public class CardapioCategoriaProdutoConfig : IEntityTypeConfiguration<CardapioCategoriaProduto>
     {
-        public void Configure(EntityTypeBuilder<CardapioCategoriaItem> builder)
+        public void Configure(EntityTypeBuilder<CardapioCategoriaProduto> builder)
         {
-            builder.ToTable("Tb_Cardapio_Categoria_Itens");
+            builder.ToTable("Tb_Cardapio_Categoria_Produtos");
 
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Id)
-                .HasColumnName("IdCardCategItem")
+                .HasColumnName("IdCardCategProduto")
                 .IsRequired();
 
             builder.Property(p => p.CodigoCardapioCategoria)
                 .HasColumnName("IdCardCategoria")
                 .IsRequired();
 
-            builder.Property(P => P.CodigoItem)
-                .HasColumnName("IdItem")
+            builder.Property(P => P.CodigoProduto)
+                .HasColumnName("IdProduto")
                 .IsRequired();
 
             builder.Property(P => P.IdEmp)
@@ -36,7 +36,7 @@ namespace Pedido.Repositorio.Config.Cardapios.CardapioCategorias.CardapioCategor
 
             builder.HasOne(p => p.Produtos)
                 .WithMany()
-                .HasForeignKey(p => p.CodigoItem)
+                .HasForeignKey(p => p.CodigoProduto)
                 .IsRequired();
         }
     }

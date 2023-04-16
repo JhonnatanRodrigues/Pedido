@@ -34,9 +34,9 @@ namespace Pedido.Controllers.Cadapios
         {
             try
             {
-                _aplicCardapio.ListarCategorias(idCardapio);
+                var ret = _aplicCardapio.ListarCategorias(idCardapio);
 
-                return new ResponseHttps().RetSucesso();
+                return new ResponseHttps().RetSucesso(ret);
             }
             catch (Exception ex)
             {
@@ -51,9 +51,9 @@ namespace Pedido.Controllers.Cadapios
         {
             try
             {
-                _aplicCardapio.ListarProdutosCategoria(idCardapioCategoria);
+                var ret = _aplicCardapio.ListarProdutosCategoria(idCardapioCategoria);
 
-                return new ResponseHttps().RetSucesso();
+                return new ResponseHttps().RetSucesso(ret);
             }
             catch (Exception ex)
             {

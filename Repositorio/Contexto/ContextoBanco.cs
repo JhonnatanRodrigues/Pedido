@@ -1,11 +1,11 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Pedido.Dominio.Cardapios.CardapioCategorias;
-using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaItens;
-using Pedido.Dominio.Categorias.Itens;
+using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaProdutos;
+using Pedido.Dominio.Categorias.Produtos;
 using Pedido.Repositorio.Config.Cardapios.CardapioCategorias;
-using Pedido.Repositorio.Config.Cardapios.CardapioCategorias.CardapioCategoriaItens;
+using Pedido.Repositorio.Config.Cardapios.CardapioCategorias.CardapioCategoriaProdutos;
 using Pedido.Repositorio.Config.Categorias;
-using Pedido.Repositorio.Config.Categorias.Itens;
+using Pedido.Repositorio.Config.Categorias.Produtos;
 
 namespace Pedido.Repositorio.Contexto
 {
@@ -20,12 +20,12 @@ namespace Pedido.Repositorio.Contexto
         {
             modelBuilder.ApplyConfiguration(new CardapioCategoriaConfig());
             modelBuilder.ApplyConfiguration(new CategoriaConfig());
-            modelBuilder.ApplyConfiguration(new CardapioCategoriaItemConfig());
-            modelBuilder.ApplyConfiguration(new ItemConfig());
+            modelBuilder.ApplyConfiguration(new CardapioCategoriaProdutoConfig());
+            modelBuilder.ApplyConfiguration(new ProdutoConfig());
         }
 
         public DbSet<CardapioCategoria> CardapioCategorias { get; set; }
-        public DbSet<CardapioCategoriaItem> CardapioCategoriaItems { get; set; }
-        public DbSet<Item> Items { get; set; }
+        public DbSet<CardapioCategoriaProduto> CardapioCategoriaProdutos { get; set; }
+        public DbSet<Produto> Produtos { get; set; }
     }
 }

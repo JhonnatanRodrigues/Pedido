@@ -1,28 +1,32 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using Pedido.Dominio.Categorias.Itens;
+using Pedido.Dominio.Categorias.Produtos;
 
-namespace Pedido.Repositorio.Config.Categorias.Itens
+namespace Pedido.Repositorio.Config.Categorias.Produtos
+
 {
-    public class ItemConfig : IEntityTypeConfiguration<Item>
+    public class ProdutoConfig : IEntityTypeConfiguration<Produto>
     {
-        public void Configure(EntityTypeBuilder<Item> builder)
+        public void Configure(EntityTypeBuilder<Produto> builder)
         {
-            builder.ToTable("Tb_Itens");
+            builder.ToTable("Tb_Produtos");
 
             builder.HasKey(p => p.Id);
 
             builder.Property(p => p.Id)
-                .HasColumnName("IdItem")
+                .HasColumnName("IdProduto")
                 .IsRequired();
 
-            builder.Property(p => p.Produto)
+            builder.Property(p => p.NomeProduto)
                 .HasColumnName("Produto")
                 .IsRequired();
 
             builder.Property(P => P.Descricao)
                 .HasColumnName("Descricao")
                 .IsRequired();
+
+            builder.Property(P => P.ImagemUri)
+                .HasColumnName("Imagem");
 
             builder.Property(P => P.Preco)
                 .HasColumnName("Preco")

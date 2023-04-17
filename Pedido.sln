@@ -3,13 +3,15 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio Version 17
 VisualStudioVersion = 17.5.33502.453
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido", "Pedido\Pedido.csproj", "{2FA4337E-8084-42D8-813C-8F860A613738}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedido", "Pedido\Pedido.csproj", "{2FA4337E-8084-42D8-813C-8F860A613738}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido.Aplic", "Aplic\Pedido.Aplic.csproj", "{82E5FF77-D2A9-49A3-BA5C-7FE08A9D5874}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedido.Aplic", "Aplic\Pedido.Aplic.csproj", "{82E5FF77-D2A9-49A3-BA5C-7FE08A9D5874}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido.Dominio", "Dominio\Pedido.Dominio.csproj", "{788D52D6-4830-4319-884A-A9117F9F467D}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedido.Dominio", "Dominio\Pedido.Dominio.csproj", "{788D52D6-4830-4319-884A-A9117F9F467D}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido.Repositorio", "Repositorio\Pedido.Repositorio.csproj", "{E958E7EE-2CEF-497A-9E5C-7E05B5DFA5E4}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Pedido.Repositorio", "Repositorio\Pedido.Repositorio.csproj", "{E958E7EE-2CEF-497A-9E5C-7E05B5DFA5E4}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Pedido.Infra", "Pedido.Infra\Pedido.Infra.csproj", "{9445AF81-3A75-4704-A94D-8878075D0B2D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -33,6 +35,10 @@ Global
 		{E958E7EE-2CEF-497A-9E5C-7E05B5DFA5E4}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E958E7EE-2CEF-497A-9E5C-7E05B5DFA5E4}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E958E7EE-2CEF-497A-9E5C-7E05B5DFA5E4}.Release|Any CPU.Build.0 = Release|Any CPU
+		{9445AF81-3A75-4704-A94D-8878075D0B2D}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{9445AF81-3A75-4704-A94D-8878075D0B2D}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{9445AF81-3A75-4704-A94D-8878075D0B2D}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{9445AF81-3A75-4704-A94D-8878075D0B2D}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

@@ -1,6 +1,5 @@
 using Microsoft.EntityFrameworkCore;
 using Pedido;
-using Pedido.Dominio.Base;
 using Pedido.Repositorio.Contexto;
 
 var builder = WebApplication.CreateBuilder(args);

@@ -1,4 +1,5 @@
-﻿using Pedido.Dominio.Adicionais;
+﻿using Microsoft.EntityFrameworkCore;
+using Pedido.Dominio.Adicionais;
 using Pedido.Repositorio.Contexto;
 using Pedido.Repositorio.Repositorios.Base;
 
@@ -9,7 +10,11 @@ namespace Pedido.Repositorio.Repositorios
         public RepAdicional(ContextoBanco db)
         {
             _Db = db;
-            Ent = db.Adicionais;
+        }
+
+        public override DbSet<Adicional> Entidade()
+        {
+            return _Db.Adicionais;
         }
     }
 }

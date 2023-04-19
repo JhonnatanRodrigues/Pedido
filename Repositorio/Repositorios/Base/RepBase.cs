@@ -4,17 +4,18 @@ using System.Linq.Expressions;
 
 namespace Pedido.Repositorio.Repositorios.Base
 {
-    public class RepBase<TEnt>
+    public abstract class RepBase<TEnt>
         where TEnt : class
     {
+        public abstract DbSet<TEnt> Entidade();
+
         public ContextoBanco _Db;
-        public DbSet<TEnt> Ent;
 
         public async Task Inserir(TEnt ent)
         {
             try
             {
-                await Ent.AddAsync(ent);
+                await Entidade().AddAsync(ent);
                 _Db.SaveChanges();
             }
             catch (Exception ex)
@@ -25,7 +26,7 @@ namespace Pedido.Repositorio.Repositorios.Base
         }
         public DbSet<TEnt> Listar()
         {
-            return Ent;
+            return Entidade();
         }
         public void SaveChanges()
         {

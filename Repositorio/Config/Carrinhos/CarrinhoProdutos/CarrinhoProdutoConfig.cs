@@ -49,6 +49,11 @@ namespace Pedido.Repositorio.Config.Carrinhos.CarrinhoProdutos
                 .WithMany()
                 .HasForeignKey(p => p.CodigoCarrinho)
                 .IsRequired();
+
+            builder.HasMany(p => p.CarrinhoProdutoAdicionais)
+                .WithOne(p => p.CarrinhoProduto)
+                .HasForeignKey(p => p.CodigoCarrinhoProduto)
+                .IsRequired();
         }
     }
 }

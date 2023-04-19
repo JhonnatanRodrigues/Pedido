@@ -1,4 +1,5 @@
-﻿using Pedido.Dominio.Cardapios.CardapioCategorias;
+﻿using Microsoft.EntityFrameworkCore;
+using Pedido.Dominio.Cardapios.CardapioCategorias;
 using Pedido.Repositorio.Contexto;
 using Pedido.Repositorio.Repositorios.Base;
 
@@ -9,7 +10,11 @@ namespace Pedido.Repositorio.Repositorios
         public RepCardapioCategoria(ContextoBanco db)
         {
             _Db = db;
-            Ent = db.CardapioCategorias;
+        }
+
+        public override DbSet<CardapioCategoria> Entidade()
+        {
+            return _Db.CardapioCategorias;
         }
     }
 }

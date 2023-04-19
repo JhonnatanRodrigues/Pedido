@@ -1,4 +1,5 @@
-﻿using Pedido.Dominio.Categorias.Produtos;
+﻿using Microsoft.EntityFrameworkCore;
+using Pedido.Dominio.Categorias.Produtos;
 using Pedido.Repositorio.Contexto;
 using Pedido.Repositorio.Repositorios.Base;
 
@@ -9,7 +10,11 @@ namespace Pedido.Repositorio.Repositorios
         public RepProduto(ContextoBanco contextoBanco)
         {
             _Db = contextoBanco;
-            Ent = contextoBanco.Produtos;
+        }
+
+        public override DbSet<Produto> Entidade()
+        {
+            return _Db.Produtos;
         }
     }
 }

@@ -1,4 +1,5 @@
-﻿using Pedido.Dominio.Categorias.Produtos;
+﻿using Pedido.Dominio.Carrinhos.CarrinhoProdutos.CarrinhoProdutoAdicionais;
+using Pedido.Dominio.Categorias.Produtos;
 using Pedido.Dominio.Padrao;
 
 namespace Pedido.Dominio.Carrinhos.CarrinhoProdutos
@@ -12,6 +13,7 @@ namespace Pedido.Dominio.Carrinhos.CarrinhoProdutos
         public int CodigoCarrinho { get; set; }
 
         public Produto Produto { get; set; }
+        public List<CarrinhoProdutoAdicional> CarrinhoProdutoAdicionais { get; set; }
         public Carrinho Carrinho { get; set; }
     }
 }

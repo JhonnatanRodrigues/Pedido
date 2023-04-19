@@ -1,4 +1,5 @@
 ﻿using Pedido.Aplic.Cardapios;
+using Pedido.Aplic.Pedidos.Carrinhos;
 using Pedido.Dominio.Adicionais;
 using Pedido.Dominio.Cardapios.CardapioCategorias;
 using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaProdutos;
@@ -17,6 +18,7 @@ namespace Pedido
         public void IdiAplic(WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IAplicCardapio, AplicCardapio>();
+            builder.Services.AddScoped<IAplicCarrinho, AplicCarrinho>();
         }
         public void IdiRepositorio(WebApplicationBuilder builder)
         {

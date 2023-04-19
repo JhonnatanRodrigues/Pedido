@@ -1,4 +1,5 @@
-﻿using Pedido.Dominio.Carrinhos;
+﻿using Microsoft.EntityFrameworkCore;
+using Pedido.Dominio.Carrinhos;
 using Pedido.Repositorio.Contexto;
 using Pedido.Repositorio.Repositorios.Base;
 
@@ -9,7 +10,11 @@ namespace Pedido.Repositorio.Repositorios
         public RepCarrinho(ContextoBanco db) 
         { 
             _Db = db;
-            Ent = db.Carrinhos;
+        }
+
+        public override DbSet<Carrinho> Entidade()
+        {
+            return _Db.Carrinhos;
         }
     }
 }

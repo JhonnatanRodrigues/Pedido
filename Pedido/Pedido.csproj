@@ -27,4 +27,8 @@
     <ProjectReference Include="..\Repositorio\Pedido.Repositorio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Controllers\Pedidos\" />
+  </ItemGroup>
+
 </Project>

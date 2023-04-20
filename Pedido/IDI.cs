@@ -1,11 +1,7 @@
 ﻿using Pedido.Aplic.Cardapios;
-using Pedido.Aplic.Pedidos.Carrinhos;
 using Pedido.Dominio.Adicionais;
 using Pedido.Dominio.Cardapios.CardapioCategorias;
 using Pedido.Dominio.Cardapios.CardapioCategorias.CardapioCategoriaProdutos;
-using Pedido.Dominio.Carrinhos;
-using Pedido.Dominio.Carrinhos.CarrinhoProdutos;
-using Pedido.Dominio.Carrinhos.CarrinhoProdutos.CarrinhoProdutoAdicionais;
 using Pedido.Dominio.Categorias;
 using Pedido.Dominio.Categorias.Produtos;
 using Pedido.Dominio.Categorias.Produtos.ProdutoAdicionais;
@@ -18,7 +14,6 @@ namespace Pedido
         public void IdiAplic(WebApplicationBuilder builder)
         {
             builder.Services.AddScoped<IAplicCardapio, AplicCardapio>();
-            builder.Services.AddScoped<IAplicCarrinho, AplicCarrinho>();
         }
         public void IdiRepositorio(WebApplicationBuilder builder)
         {
@@ -29,9 +24,6 @@ namespace Pedido
             builder.Services.AddScoped<IRepCategoria, RepCategoria>();
             builder.Services.AddScoped<IRepAdicional, RepAdicional>();
             builder.Services.AddScoped<IRepProdutoAdicional, RepProdutoAdicional>();
-            builder.Services.AddScoped<IRepCarrinho, RepCarrinho>();
-            builder.Services.AddScoped<IRepCarrinhoProduto, RepCarrinhoProduto>();
-            builder.Services.AddScoped<IRepCarrinhoProdutoAdicional, RepCarrinhoProdutoAdicional>();
         }
     }
 }

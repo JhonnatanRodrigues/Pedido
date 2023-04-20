@@ -15,4 +15,8 @@
     <ProjectReference Include="..\Dominio\Pedido.Dominio.csproj" />
   </ItemGroup>
 
+  <ItemGroup>
+    <Folder Include="Pedidos\" />
+  </ItemGroup>
+
 </Project>
